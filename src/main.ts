@@ -1,0 +1,15 @@
+import App from './App.svelte';
+import './styles/variables.css';
+import './pages/home/section/catalogo/catalogo.css';
+import './pages/home/section/contacto/contacto.css';
+import './pages/home/section/footer/footer.css';
+import './pages/home/section/heroe/heroe.css';
+import './pages/home/section/navbar/navbar.css';
+import './pages/home/section/navbar/navbar.css';
+import './pages/home/section/sobrenosotros/sobrenosotros.css';
+
+const app = new App({
+  target: document.getElementById('app')!,
+});
+
+export default app;

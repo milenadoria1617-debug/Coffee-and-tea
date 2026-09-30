@@ -1,0 +1,134 @@
+/* Contenedor principal de la sección */
+.heroe-seccion {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* 1. Imagen de fondo que cubre toda la pantalla */
+.heroe-fondo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* 2. Capa negra con opacidad sobre la imagen */
+.heroe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Puedes usar este degradado para oscurecer más el texto a la izquierda sin tapar el fondo: */
+  background:  rgba(0, 0, 0, 0.5);
+  /* O si prefieres un negro plano uniforme en toda la foto, descomenta la siguiente línea: */
+  /* background-color: rgba(0, 0, 0, 0.45); */
+  z-index: 2;
+}
+
+/* 3. Contenedor del contenido (por encima del fondo y del overlay) */
+.heroe-contenedor {
+  position: relative;
+  z-index: 3;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 48px 60px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Bloque que contiene los textos y el botón */
+.heroe-texto {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+/* Título principal */
+.heroe-texto h1 {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Frase secundaria destacada ("para una alegría tómate un té") */
+.texto-secundario {
+  display: block;
+  font-style: italic;
+  font-family: serif;
+  color: var(--color-fondo); /* Rosa de marca sobre la fotografía. */
+  font-weight: 600;
+  margin-top: 6px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Párrafo descriptivo */
+.heroe-texto p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 440px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos de botones */
+.boton {
+  display: inline-block;
+  padding: 16px 34px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.boton-secundario {
+  background-color: var(--color-secundario);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.boton-secundario:hover {
+  background-color: var(--color-primario);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Responsive para pantallas medianas y móviles */
+@media (max-width: 768px) {
+  .heroe-contenedor {
+    padding: 30px 24px;
+  }
+
+  .heroe-texto {
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .heroe-texto h1 {
+    font-size: 2.4rem;
+  }
+
+  .heroe-texto p {
+    font-size: 1rem;
+  }
+}

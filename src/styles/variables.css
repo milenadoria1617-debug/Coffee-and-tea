@@ -1,0 +1,137 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-fondo: #efcbc6;
+  --color-fondo-secundario: #F6F2EB;
+  --color-primario: var(--color-fondo);
+  --color-titulos: var(--color-secundario);
+  --color-parrafos: #5E504B;
+  --color-secundario: #B87A18;
+  --color-acento-texto: var(--color-secundario);
+  --color-blanco: #ffffff;
+  --color-borde: #d5c3c4;
+  --color-rosa-profundo: #713957;
+  --color-parrafo: var(--color-parrafos);
+  --color-texto: var(--color-parrafos);
+  --fondo-secundario: var(--color-fondo-secundario);
+
+  --fuente-moderna: system-ui, -apple-system, sans-serif;
+  font-family: var(--fuente-moderna);
+}
+.contenedor-seccion{
+width: 1280px;
+margin:auto;  
+}
+.fondo-principal{
+   background-color:var(--color-fondo);
+   color: var(--color-parrafos);
+}
+.fondo-secundario{
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-parrafos)
+}
+.boton {
+  padding: 18px 32px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex: 1;
+}
+.boton-secundario {
+  background-color: var(--color-secundario);
+  color: var(--color-parrafos);
+}
+.boton-primario{
+   background-color: var(--color-secundario);
+  color: var(--color-parrafos);
+}
+.texto-secundario{
+  color: var(--color-acento-texto);
+}
+a {
+  font-family: var(--fuente-moderna);
+}
+p {
+  font-family: var(--fuente-moderna);
+}
+.cursiva {
+  font-style: italic;
+}
+.moderna {
+  font-family: var(--fuente-moderna);
+}
+.elegante {
+  font-family: Georgia, serif;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+body {
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-parrafos);
+}
+
+.boton-primario:hover,
+.boton-secundario:hover {
+  background-color: var(--color-parrafos);
+  color: var(--color-parrafos);
+}
