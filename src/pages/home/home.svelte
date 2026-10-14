@@ -11,7 +11,7 @@
 
 
 
-  const originalScripts: { attributes: string[][]; content: string }[] = [{"attributes":[["src","navbar.js"]],"content":""},{"attributes":[["src","detalle-producto.js"],["defer",""]],"content":""}];
+  const originalScripts: { attributes: string[][]; content: string }[] = [{"attributes":[["src","detalle-producto.js"],["defer",""]],"content":""}];
   onMount(() => {
     const previousClass = document.body.className;
     const previousStyle = document.body.getAttribute('style');
