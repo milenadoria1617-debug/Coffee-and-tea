@@ -66,8 +66,8 @@
       <div class="contenedor-seccion">
         <div class="catalogo-header">
           <span style="color: var(--color-secundario, #B87A18) !important;">Colección Exclusiva</span>
-          <h2 style="color: #ffffff !important;">Explora nuestros productos</h2>
-          <p style="color: #ffffff !important; display: -webkit-box !important; -webkit-line-clamp: 3 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; text-overflow: ellipsis !important;">Explora nuestra colección completa de artículos.</p>
+          <h2>Explora nuestros productos</h2>
+          <p style="display: -webkit-box !important; -webkit-line-clamp: 3 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; text-overflow: ellipsis !important;">Explora nuestra colección completa de artículos.</p>
         </div>
         <div class="catalogo-grid-wrapper">
         <!-- Tarjeta: heart of melon -->

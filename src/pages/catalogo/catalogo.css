@@ -564,3 +564,18 @@ body[data-svelte-page="catalogo"] .card-capa-hover {
     padding: 0;
   }
 }
+
+/* Dark text on the pink catalog background. */
+body[data-svelte-page="catalogo"] #catalogo .catalogo-header h2,
+body[data-svelte-page="catalogo"] #catalogo .catalogo-header p,
+body[data-svelte-page="catalogo"] #catalogo .catalogo-header span {
+  color: var(--color-parrafos) !important;
+}
+
+body[data-svelte-page="catalogo"].pagina-catalogo-cuerpo {
+  padding-top: 0;
+}
+
+body[data-svelte-page="catalogo"] .seccion-catalogo-externa {
+  padding-top: 70px;
+}

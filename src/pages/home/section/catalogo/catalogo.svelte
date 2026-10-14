@@ -14,7 +14,7 @@
 
 </script>
 
-<section id="catalogo" class="fondo-principal">
+<section id="catalogo" class="fondo-principal catalogo-home">
           <div class="contenedor-seccion">
             <div class="catalogo-header">
               <span>Colección Exclusiva</span>

@@ -190,3 +190,23 @@
 .catalogo-item .informacion-producto h3:focus-visible {
   color: var(--color-primario);
 }
+
+/* Let each card keep a readable width on phones and tablets. */
+.catalogo-home .catalogo-contenido {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.catalogo-home .catalogo-item {
+  grid-column: auto;
+}
+
+@media (max-width: 640px) {
+  #catalogo.catalogo-home {
+    padding: 3rem 1rem;
+  }
+
+  .catalogo-home .producto-descripcion {
+    text-align: left;
+  }
+}
