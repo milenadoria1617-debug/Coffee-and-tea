@@ -524,3 +524,43 @@ section#catalogo .catalogo-header p,
 .seccion-catalogo-externa .card-modern-pill .pastilla-precio){
   color: #ffffff !important;
 }
+
+/* Keep product information accessible without a mouse. */
+body[data-svelte-page="catalogo"] .card-capa-hover {
+  overflow-wrap: anywhere;
+}
+
+@media (hover: none), (max-width: 640px) {
+  body[data-svelte-page="catalogo"] .card-overlay-hover {
+    height: auto;
+  }
+
+  body[data-svelte-page="catalogo"] .card-overlay-hover .card-img-box {
+    position: relative;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  body[data-svelte-page="catalogo"] .card-overlay-hover .card-capa-hover {
+    position: relative;
+    opacity: 1;
+    transform: none;
+    background: var(--color-parrafos);
+    backdrop-filter: none;
+    padding: 1.25rem;
+  }
+
+  body[data-svelte-page="catalogo"] .card-overlay-hover .card-badge-flotante {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-svelte-page="catalogo"] #catalogo {
+    padding: 2.5rem 1rem;
+  }
+
+  body[data-svelte-page="catalogo"] #catalogo .contenedor-seccion {
+    padding: 0;
+  }
+}
