@@ -17,20 +17,20 @@
                 <div class="fila-formulario">
                   <div class="campo-grupo">
                     <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. Alex Martínez" required="">
+                    <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. Alex Martínez" required>
                   </div>
                   <div class="campo-grupo">
                     <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" autocomplete="email" placeholder="alex@ejemplo.com" required="">
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="alex@ejemplo.com" required>
                   </div>
                 </div>
                 <div class="campo-grupo">
                   <label for="phone">Número de contacto</label>
-                  <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="300 233 3443" required="">
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="300 233 3443" required>
                 </div>
                 <div class="campo-grupo">
                   <label for="mensaje">¿Cómo podemos ayudarte?</label>
-                  <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu mensaje..." required=""></textarea>
+                  <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu mensaje..." required></textarea>
                 </div>
 
                 <button type="submit" class="boton-enviar-contacto">

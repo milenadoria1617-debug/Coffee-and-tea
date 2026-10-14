@@ -1,10 +1,11 @@
 <script lang="ts">
   import './catalogo.css';
+  import Productos from '../../components/Productos.svelte';
   import { assetUrl } from '../../assets';
   import { onMount } from 'svelte';
   import Navbar from '../home/section/navbar/navbar.svelte';
   import Footer from '../home/section/footer/footer.svelte';
-  const originalScripts: { attributes: string[][]; content: string }[] = [{"attributes":[["src","navbar.js"]],"content":""},{"attributes":[["src","detalle-producto.js"],["defer",""]],"content":""}];
+  const originalScripts: { attributes: string[][]; content: string }[] = [{"attributes":[["src","navbar.js"]],"content":""}];
   onMount(() => {
     const previousClass = document.body.className;
     const previousStyle = document.body.getAttribute('style');
@@ -106,68 +107,7 @@
       <h2>Explora nuestros productos</h2>
     </div>
 
-    <div class="catalogo-contenido cuadricula">
-      <div class="catalogo-item">
-        <div class="catalogo-imagen">
-          <img src={assetUrl("imagenes/nathan-dumlao-zUNs99PGDg0-unsplash-copia.jpg")} alt="Foto de heart of melon">
-        </div>
-        <div class="item-contenido">
-          <div class="informacion-producto">
-            <h3>heart of melon</h3>
-          </div>
-          <p class="producto-descripcion">
-            Un sorbo de felicidad en cada taza . Cafe preparado con pasion , sabor que enamora y un momento perfecto para disfrutar .
-          </p>
-          <div class="precio">
-            <span class="precio-label">Precio</span>
-            <br>
-            <span class="precio-valor">$ 50.000</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="catalogo-item">
-        <div class="catalogo-imagen">
-          <img src={assetUrl("imagenes/te-elle-gourmet-68df7d1065ed6.jpg")} alt="Foto de Spring">
-        </div>
-        <div class="item-contenido">
-          <div class="informacion-producto">
-            <h3>Spring</h3>
-          </div>
-          <p class="producto-descripcion">
-            Calidez en sobra sorbo. Una taza de te que invita a relajarse, disfrutar y convertir cualquier momentos en pausa llena de encanto .
-          </p>
-          <div class="precio">
-            <span class="precio-label">Precio</span>
-            <br>
-            <span class="precio-valor">$ 50.000</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="catalogo-item">
-        <div class="catalogo-imagen">
-          <img src={assetUrl("imagenes/images.jpg")} alt="Foto de confectionery">
-        </div>
-        <div class="item-contenido">
-          <div class="informacion-producto">
-            <h3>confectionery</h3>
-          </div>
-          <p class="producto-descripcion">
-            El postre que enamora a primera vista. Cremoso , suave y con el delicioso sabor del cafe que convierte cada bocado en una experiencia inolvidable .
-          </p>
-          <div class="precio">
-            <span class="precio-label">Precio</span>
-            <br>
-            <span class="precio-valor">$ 50.000</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-
-
-  
+    <Productos />
   </div>
 </section>
    
@@ -184,20 +124,20 @@
         <div class="fila-formulario">
           <div class="campo-grupo">
             <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. Alex Martínez" required="">
+            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. Alex Martínez" required>
           </div>
           <div class="campo-grupo">
             <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="alex@ejemplo.com" required="">
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="alex@ejemplo.com" required>
           </div>
         </div>
 <div class="campo-grupo">
             <label for="phone">Número de contacto</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="300 233 3443" required="">
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="300 233 3443" required>
           </div>
         <div class="campo-grupo">
           <label for="mensaje">¿Cómo podemos ayudarte?</label>
-          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu mensaje..." required=""></textarea>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu mensaje..." required></textarea>
         </div>
 
         <button type="submit" class="boton-enviar-contacto">
