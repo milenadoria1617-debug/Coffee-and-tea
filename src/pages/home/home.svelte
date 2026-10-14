@@ -9,14 +9,18 @@
   import Footer from './section/footer/footer.svelte';
   import { onMount } from 'svelte';
 
-  const originalScripts: { attributes: string[][]; content: string }[] = [{"attributes":[["src","navbar.js"]],"content":""}];
+
+
+  const originalScripts: { attributes: string[][]; content: string }[] = [{"attributes":[["src","navbar.js"]],"content":""},{"attributes":[["src","detalle-producto.js"],["defer",""]],"content":""}];
   onMount(() => {
     const previousClass = document.body.className;
     const previousStyle = document.body.getAttribute('style');
+    const previousPage = document.body.getAttribute('data-svelte-page');
     const titleElement = document.head.querySelector('title');
     const previousTitleId = titleElement?.getAttribute('id');
     
     document.body.className = "";
+    document.body.setAttribute('data-svelte-page', "home");
     document.body.setAttribute('style', "");
     const mountedScripts: HTMLScriptElement[] = [];
     let cancelled = false;
@@ -43,6 +47,8 @@
       mountedScripts.forEach((script) => script.remove());
       
       document.body.className = previousClass;
+      if (previousPage === null) document.body.removeAttribute('data-svelte-page');
+      else document.body.setAttribute('data-svelte-page', previousPage);
       if (previousStyle === null) document.body.removeAttribute('style');
       else document.body.setAttribute('style', previousStyle);
     };
@@ -68,5 +74,5 @@
 
     
     
-  
+
 

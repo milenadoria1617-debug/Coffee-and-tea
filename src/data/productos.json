@@ -4,20 +4,20 @@
     "nombre": "heart of melon",
     "imagen": "imagenes/nathan-dumlao-zUNs99PGDg0-unsplash-copia.jpg",
     "precio": "$ 50.000",
-    "descripcion": "Un sorbo de felicidad en cada taza . Cafe preparado con pasion , sabor que enamora y un momento perfecto para disfrutar ."
+    "descripcion": "Un sorbo de felicidad en cada taza . Cafe preparado con\n                    pasion , sabor que enamora y un momento perfecto para\n                    disfrutar ."
   },
   {
     "id": "spring-2",
     "nombre": "Spring",
     "imagen": "imagenes/te-elle-gourmet-68df7d1065ed6.jpg",
     "precio": "$ 50.000",
-    "descripcion": "Calidez en sobra sorbo. Una taza de te que invita a relajarse, disfrutar y convertir cualquier momentos en pausa llena de encanto ."
+    "descripcion": "Calidez en sobra sorbo. Una taza de te que invita a\n                    relajarse, disfrutar y convertir cualquier momentos en pausa\n                    llena de encanto ."
   },
   {
     "id": "confectionery-3",
     "nombre": "confectionery",
     "imagen": "imagenes/images.jpg",
     "precio": "$ 50.000",
-    "descripcion": "El postre que enamora a primera vista. Cremoso , suave y con el delicioso sabor del cafe que convierte cada bocado en una experiencia inolvidable ."
+    "descripcion": "El postre que enamora a primera vista. Cremoso , suave y con\n                    el delicioso sabor del cafe que convierte cada bocado en una\n                    experiencia inolvidable ."
   }
 ]

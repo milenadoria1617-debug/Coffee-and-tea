@@ -1,4 +1,4 @@
-# coffee&tea (Svelte + TypeScript)
+# coffee&tea (2) (Svelte + TypeScript)
 
 Este proyecto ha sido transformado automáticamente desde HTML/CSS estático a una aplicación modular moderna en **Svelte + TypeScript**.
 

@@ -8,12 +8,14 @@
   import { assetUrl } from './assets';
   let currentRoute = 'home';
   let pageKey = '';
+  let productId = '';
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   function parseRoute() {
     const path = window.location.pathname.slice(base.length).replace(/^\//, '');
     currentRoute = path.startsWith('detalle') ? 'detalle' : path.startsWith('catalogo') ? 'catalogo' : 'home';
     document.body.dataset.sveltePage = currentRoute;
     const id = decodeURIComponent(path.split('/')[1] || '');
+    productId = id;
     const product = products.find((item) => item.id === id);
     (window as any).__svelteProductSearch = product ? '?' + new URLSearchParams({ titulo: product.nombre, precio: String(product.precio), desc: product.descripcion, img: assetUrl(product.imagen) }).toString() : window.location.search;
     pageKey = window.location.pathname + window.location.search + currentRoute;
@@ -70,7 +72,7 @@
   {#if currentRoute === 'catalogo'}
     <Catalogo />
   {:else if currentRoute === 'detalle'}
-    <Detalle />
+    <Detalle {productId} />
   {:else}
     <Home />
   {/if}

@@ -1,18 +1,21 @@
 <script lang="ts">
   import './catalogo.css';
-  import Productos from '../../components/Productos.svelte';
   import { assetUrl } from '../../assets';
   import { onMount } from 'svelte';
+  import productos from '../../data/productos.json';
+
   import Navbar from '../home/section/navbar/navbar.svelte';
   import Footer from '../home/section/footer/footer.svelte';
-  const originalScripts: { attributes: string[][]; content: string }[] = [{"attributes":[["src","navbar.js"]],"content":""}];
+  const originalScripts: { attributes: string[][]; content: string }[] = [{"attributes":[],"content":"\n(() => {\n  const navbar = document.body.querySelector('header, nav, .navbar, #navbar, .barra-navegacion');\n  if (!navbar) return;\n  const update = () => {\n    const fixed = getComputedStyle(navbar).position === 'fixed';\n    document.body.style.setProperty('--pagina-navbar-offset', fixed ? Math.max(0, navbar.getBoundingClientRect().bottom) + 'px' : '0px');\n  };\n  update();\n  const observer = new ResizeObserver(update);\n  observer.observe(navbar);\n  window.addEventListener('resize', update);\n  window.addEventListener('load', update, { once: true });\n})();\n"}];
   onMount(() => {
     const previousClass = document.body.className;
     const previousStyle = document.body.getAttribute('style');
+    const previousPage = document.body.getAttribute('data-svelte-page');
     const titleElement = document.head.querySelector('title');
     const previousTitleId = titleElement?.getAttribute('id');
     
-    document.body.className = "";
+    document.body.className = "pagina-catalogo-cuerpo";
+    document.body.setAttribute('data-svelte-page', "catalogo");
     document.body.setAttribute('style', "");
     const mountedScripts: HTMLScriptElement[] = [];
     let cancelled = false;
@@ -39,6 +42,8 @@
       mountedScripts.forEach((script) => script.remove());
       
       document.body.className = previousClass;
+      if (previousPage === null) document.body.removeAttribute('data-svelte-page');
+      else document.body.setAttribute('data-svelte-page', previousPage);
       if (previousStyle === null) document.body.removeAttribute('style');
       else document.body.setAttribute('style', previousStyle);
     };
@@ -46,114 +51,57 @@
 </script>
 <svelte:head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title></svelte:head>
+<title>Explora nuestros productos • Catálogo Oficial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"></svelte:head>
 
-  <Navbar pageAttributes={{"id":"barra-navegacion","class":"navbar"}} pageLinks={["#heroe","#heroe","#sobre-nosotros","#catalogo","#contacto"]} />
-    <div class="contenedor-principal">
-     
-      <main>
-        <section class="heroe-seccion" id="heroe">
-          <div class="heroe-contenedor">
-            <div class="heroe-texto">
-              <h1>
-                Para una sonrisa tomaté un cafe,<span class="elegante cursiva texto-secundario">
-                  <span style="color: #f2df07 !important">para una alegria tomaté un té</span></span>
-              </h1>
-              <p>Una taza que da vida y una cafeteria que comparte alegria</p>
-              <div>
-                <a href="#catalogo" class="boton boton-secundario">
-                  Explorar catalogo
-                </a>
-              </div>
-            </div>
-            <div class="heroe-imagen-contenedor">
-              <img src={assetUrl("imagenes/tranquilidad-café-interior-ambiente-urbano-fotografía-diseño-moderno-luz-natural-estética-minimalista-descubra-una-serena-381843134.webp")} alt="">
-            </div>
-          </div>
-        </section>
-        <section class="sobre-nosotros-seccion" id="sobre-nosotros">
-          <div class="sobre-nosotros-contendor">
-            <div class="col-izq-sobre">
-              <div class="contenedor-imagen">
-                <img class="imagen-estudio" src={assetUrl("imagenes/sobre-nosotros.png")} alt="Barra de Coffee and Tea con una selección de cafés y tés" loading="lazy">
-              </div>
-            </div>
-            <div class="col-der-sobre">
-              <span class="sobre-nosotros-etiqueta">Nuestra esencia</span>
-              <h2 class="titulo-sobre-nosotros">
-                Es un aroma a hogar, un espacio especial
-              </h2>
-              <div class="texto-sobre">
-                <p>
-                  Más que café, te brindamos experiencias con un sabor único. Cada taza es una invitación a disfrutar y sentirte en casa.
-                </p>
-                <p>
-                  Un espacio cálido y cómodo para compartir, hacer una pausa y disfrutar de esos pequeños momentos que alegran el día.
-                </p>
-                <p class="descripcion">
-                  Ven por el aroma, quédate por el sabor. Siempre habrá una razón para volver.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
-  <section id="catalogo" class="fondo-principal">
-  <div class="contenedor-seccion">
-    <div class="catalogo-header">
-      <span>Colección Exclusiva</span>
-    
-    
-      <h2>Explora nuestros productos</h2>
-    </div>
+  <!-- 1. Header / Navbar Original del Proyecto (index.html) -->
+<Navbar pageAttributes={{"id":"barra-navegacion","class":"navbar"}} pageLinks={["index.html#heroe","index.html#heroe","index.html#sobre-nosotros","index.html#catalogo","index.html#contacto"]} />
 
-    <Productos />
-  </div>
-</section>
-   
-      
-  <section id="contacto" class="seccion-contacto fondo-secundario">
-  <div class="contenedor-seccion">
-    <div class="contacto-cabecera">
-      <span class="contacto-insignia">Hablemos</span>
-      <h2 class="contacto-titulo">Ponte en Contacto</h2>
-      <p class="contacto-bajada">Déjanos tu consulta o mensaje y nos pondremos en contacto contigo.</p>
-    </div>
-      <div class="tarjeta-formulario-contacto">
-      <form class="formulario-contacto">
-        <div class="fila-formulario">
-          <div class="campo-grupo">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. Alex Martínez" required>
+  <!-- 2. Área Principal del Catálogo -->
+  <main class="seccion-catalogo-externa">
+    <section id="catalogo">
+      <div class="contenedor-seccion">
+        <div class="catalogo-header">
+          <span style="color: var(--color-secundario, #B87A18) !important;">Colección Exclusiva</span>
+          <h2 style="color: #ffffff !important;">Explora nuestros productos</h2>
+          <p style="color: #ffffff !important; display: -webkit-box !important; -webkit-line-clamp: 3 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; text-overflow: ellipsis !important;">Explora nuestra colección completa de artículos.</p>
+        </div>
+        <div class="catalogo-grid-wrapper">
+        <!-- Tarjeta: heart of melon -->
+        {#each productos as producto (producto.id)}
+<div class="card-overlay-hover" data-producto={producto.id}>
+          <div class="card-img-box">
+            <img src={assetUrl(producto.imagen)} alt={producto.nombre} loading="lazy" on:error={(event) => { const imagen = event.currentTarget; if (imagen instanceof HTMLImageElement && !imagen.dataset.fallback) { imagen.dataset.fallback = 'true'; imagen.src = 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80'; } }}>
           </div>
-          <div class="campo-grupo">
-            <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="alex@ejemplo.com" required>
+          <div class="card-badge-flotante">
+            <span>{producto.precio}</span>
+          </div>
+          <div class="card-capa-hover">
+            <h3>{producto.nombre}</h3>
+            <span class="card-precio">{producto.precio}</span>
+            <p style="display: -webkit-box !important; -webkit-line-clamp: 3 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; text-overflow: ellipsis !important;">{producto.descripcion}</p>
+            <a href={import.meta.env.BASE_URL + 'detalle/' + encodeURIComponent(producto.id)} class="card-boton-accion" style="background-color: var(--color-secundario, #B87A18) !important; color: #ffffff !important; text-decoration: none !important;">
+              <span style="color: #ffffff !important; font-weight: 600 !important; text-transform: none !important; letter-spacing: normal !important; margin: 0 !important;">Ver detalles</span>
+            </a>
           </div>
         </div>
-<div class="campo-grupo">
-            <label for="phone">Número de contacto</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="300 233 3443" required>
-          </div>
-        <div class="campo-grupo">
-          <label for="mensaje">¿Cómo podemos ayudarte?</label>
-          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu mensaje..." required></textarea>
+{/each}
+
+        <!-- Tarjeta: Spring -->
+        
+
+        <!-- Tarjeta: confectionery -->
+        
         </div>
+      </div>
+    </section>
+  </main>
 
-        <button type="submit" class="boton-enviar-contacto">
-          <span>Enviar Mensaje</span>
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-</main>
-    </div>
+  <!-- 3. Footer Original del Proyecto (index.html) -->
+<Footer pageAttributes={{"class":"sitio-footer fondo-principal","id":"pie-de-pagina"}} pageLinks={["index.html#heroe","index.html#sobre-nosotros","index.html#catalogo","index.html#contacto"]} />
 
-
-  <Footer pageAttributes={{"class":"sitio-footer fondo-principal","id":"pie-de-pagina"}} pageLinks={["#heroe","#sobre-nosotros","#catalogo","#contacto"]} />
-
-  
-  
 
 
