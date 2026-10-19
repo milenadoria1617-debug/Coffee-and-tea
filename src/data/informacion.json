@@ -1,12 +1,12 @@
 {
-  "nombre": "Document",
-  "telefono": "+52 55 1234 5678",
-  "whatsapp": "525512345678",
-  "email": "contacto@tiendaescolar.com",
-  "direccion": "Av. Principal #123, Ciudad Escolar",
+  "nombre": "Coffee and tea",
+  "telefono": "+57 3043463397",
+  "whatsapp": "3043463397",
+  "email": "coffeeandtea@gmail.com",
+  "direccion": "32/2 centro Monteria cordoba ",
   "horario": "Lunes a Viernes: 9:00 AM - 7:00 PM",
   "redesSociales": {
-    "instagram": "@tiendaescolar",
-    "facebook": "facebook.com/tiendaescolar"
+    "instagram": "@Coffeeandtea_2026",
+    "facebook": "facebook.com/coffeeandtea"
   }
 }

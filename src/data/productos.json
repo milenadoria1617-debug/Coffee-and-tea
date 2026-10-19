@@ -3,21 +3,42 @@
     "id": "heart-of-melon-1",
     "nombre": "heart of melon",
     "imagen": "imagenes/nathan-dumlao-zUNs99PGDg0-unsplash-copia.jpg",
-    "precio": "$ 50.000",
+    "precio": "$ 20.000",
     "descripcion": "Un sorbo de felicidad en cada taza . Cafe preparado con\n                    pasion , sabor que enamora y un momento perfecto para\n                    disfrutar ."
   },
   {
     "id": "spring-2",
     "nombre": "Spring",
     "imagen": "imagenes/te-elle-gourmet-68df7d1065ed6.jpg",
-    "precio": "$ 50.000",
+    "precio": "$ 15.000",
     "descripcion": "Calidez en sobra sorbo. Una taza de te que invita a\n                    relajarse, disfrutar y convertir cualquier momentos en pausa\n                    llena de encanto ."
   },
   {
     "id": "confectionery-3",
     "nombre": "confectionery",
     "imagen": "imagenes/images.jpg",
-    "precio": "$ 50.000",
+    "precio": "$ 30.000",
     "descripcion": "El postre que enamora a primera vista. Cremoso , suave y con\n                    el delicioso sabor del cafe que convierte cada bocado en una\n                    experiencia inolvidable ."
+  },
+  {
+    "nombre": "Boba tea",
+    "precio": "$20.000",
+    "descripcion": "Te de burbujas, espumoso y cremoso con deliciosos sabores que atrapan a cualquiera.",
+    "id": "boba-tea-1",
+    "imagen": "imagenes/boba-tea-1-79b7a489.jpg"
+  },
+  {
+    "nombre": "Mousse de oreo",
+    "precio": "$25.000",
+    "descripcion": "Chocolate, crujiente y delicioso para volverte agua la boca.",
+    "id": "mousse-de-oreo-1",
+    "imagen": "imagenes/mousse-de-oreo-1-26811783.jpg"
+  },
+  {
+    "nombre": "Smothie de frutas",
+    "precio": "$28.000",
+    "descripcion": "Variados en sabores y presentaciones, perfectos para esas personas que desean cuidarse con la azucar",
+    "id": "smothie-de-frutas-1",
+    "imagen": "imagenes/smothie-de-frutas-1-da5fb98f.jpg"
   }
 ]
